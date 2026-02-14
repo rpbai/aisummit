@@ -1,0 +1,407 @@
+@font-face {
+    font-family: 'IntelFont';
+    src: url('./assets/fonts/intel/intelone-display-regular.ttf');
+    /* IE9 Compat Modes */
+    src: url('./assets/fonts/intel/intelone-display-regular.ttf') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('./assets/fonts/intel/intelone-display-regular.ttf') format('woff2'),
+        /* Super Modern Browsers */
+        url('./assets/fonts/intel/intelone-display-regular.ttf') format('woff'),
+        /* Pretty Modern Browsers */
+        url('./assets/fonts/intel/intelone-display-regular.ttf') format('truetype'),
+}
+
+body {
+  font-family: 'IntelFont', Fallback, sans-serif !important;
+  /* touch-action: pan-x pan-y; */
+}
+
+.home-page {
+    background-size: cover;
+    background: linear-gradient(21deg, #d6e6fd, #eaf3fe, #feffff, #f8fdf7);
+    overflow: hidden;
+}
+
+.particles-js {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 102%;
+    transition: all 1s;
+}
+
+.card-container {
+    justify-content: center;
+    height: 100%;
+    overflow: auto;
+}
+
+.card {
+    border: 0.1rem solid #d8e7fd;
+    overflow: hidden;
+}
+
+.card-title {
+    position: relative;
+    font-weight: 900;
+}
+
+.card-title::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    border-bottom: 0.5rem solid #0071c5;
+    width: 20%;
+    min-width: 11rem;
+}
+
+.btn-primary {
+    background: #0071c5;
+    border-radius: 3rem;
+    font-size: 1.3vw;
+    font-weight: 900;
+    color: #fff;
+    border: 2px solid #0071c5;
+    text-transform: uppercase;
+    outline: 0;
+    letter-spacing: .1rem;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    transition: all .15s ease;
+    padding: 0.5rem 3rem;
+}
+
+.ai-aware-title {
+    background-image: url(./assets/images/ai-aware-title-bg.png);
+    background-size: cover;
+    background-position: 50%;
+    background-color: #0071c5;
+}
+
+.ai-appr-title {
+    background-image: url(./assets/images/ai-aware-title-bg.png);
+    background-size: cover;
+    background-position: 50%;
+    background-color: #0071c5;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .7;
+    background-color: #000;
+}
+
+.bg-overlay {
+    background: linear-gradient(180deg, rgba(231, 231, 231, 0.28) 0%, rgba(255, 255, 255, 0.06) 100%);
+    backdrop-filter: blur(16px);
+}
+
+.slider-btn {
+    width: 3.6rem;
+    height: 3.6rem;
+    display: inline-block;
+    border-radius: 100%;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    transition: all 0.5s;
+}
+
+.slider-btn-left {
+    padding: 0.9rem 0.33rem 0.9rem 0rem;
+}
+
+.slider-btn-right {
+    padding: 0.9rem 0rem 0.9rem 0.33rem;
+}
+
+.slider-btn > img {
+    width: 100%;
+    height: 100%;
+}
+
+.slide-container {
+    overflow: auto; 
+    scroll-snap-type: x mandatory;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.slide-container::-webkit-scrollbar {
+    display: none;
+}
+
+.slide {
+    transition: all 1s;
+    /* left: 110%; */
+    position: relative;
+    min-width: 100%;
+    max-width: 100%;
+    scroll-snap-align: start;
+}
+
+.radio-input {
+    height: 1.6rem!important;
+    width: 1.6rem!important;
+    min-width: 1.6rem!important;
+    max-width: 1.6rem!important;
+    min-height: 1.6rem!important;
+    max-height: 1.6rem!important;
+}
+
+.form-group > input {
+    outline: none;
+}
+
+.form-group > label {
+    font-size: 1.3vw;
+    margin: 0;
+}
+
+.form-group > input[type='radio'] {
+    accent-color: #0071c5;
+}
+
+.form-group > input:focus {
+    outline: none;
+}
+
+.answer-container {
+    /* opacity: 0; */
+    transition: all 1s;
+    position: relative;
+}
+
+.submit-btn-container {
+    text-align: center;
+}
+
+.fa-check::before {
+    content: "\f00c";
+    color: #2dce89!
+}
+
+.correct-answer {
+    height: 0;
+    visibility: hidden;
+}
+
+.wrong-answer {
+    height: 0;
+    visibility: hidden;
+}
+
+.final-description {
+    font-size: 1.5vw;
+}
+
+.answer-container-description {
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    transition: all 1s;
+}
+
+.next-btn-container {
+    display: none;
+}
+
+.bullet-point {
+    position: relative;
+}
+
+.bullet-point > button {
+    border: 0;
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: #0071c5;
+    outline: 0;
+}
+
+.bullet-point > .active-bullet {
+    color: #fff!important;
+    background: #0071c5!important;
+    border: 2px solid #fff!important;
+}
+
+.screen-5-bg {
+    background-image: url(./assets/images/whyNeedAiAware.jpg);
+    background-size: cover;
+    background-position: 50%;
+    background-color: #0071c5;
+}
+
+.bullet-card {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    width: 90%;
+    background: white;
+    margin-left: 4%;
+    transition: all 1s;
+}
+
+.bullet-card-show {
+    display: inline-block;
+    opacity: 1;
+}
+
+.right-answer-indicator {
+    border: 1px solid #4bae4f;
+    border-radius: 7px;
+    background: #c2ffc4;
+}
+
+.wrong-answer-indicator {
+    border: 1px solid #db3a3c;
+    border-radius: 7px;
+    background: #ffa4a5;
+}
+
+.badge-form-bg {
+    background-image: url(./assets/images/badge-preview.jpg);
+    background-size: cover;
+    background-position: 50%;
+    background-color: #0071c5; 
+}
+
+.badge-input {
+    border: 2px solid #0071c5;
+    border-radius: 0.3rem;
+    background: #0070c54b;
+    outline: 0;
+    font-weight: 900;
+    letter-spacing: 0.1vw;
+}
+
+.badge-input:focus {
+    box-shadow: #0070c54b 0px 7px 29px 0px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.badge-generator-container {
+    height: 0;
+    width: 100%;
+    overflow: auto;
+}
+
+.badge-generator {
+    position: relative;
+    /* width: 798px;
+    height: 736px; */
+    width: 726.5px;
+    height: 819.5px;
+    background: transparent;
+}
+
+.user-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.user-badge-name {
+    z-index: 2;
+    position: absolute;
+    font-size: 55px;
+    font-weight: 900;
+    top: 518px;
+    left: 45px;
+    width: 645px;
+    text-align: center;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-badge-preview {
+    width: 86%;
+    /* border: 3px solid #e97209;
+    border-radius: 5px; */
+    border: none;
+}
+
+.restart-btn {
+    opacity: 0;
+    transition: all 2.5s;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    z-index: 1;
+    padding: 0.3rem 1.5rem !important;
+}
+
+.keyboard {
+    text-align: center;
+    display: flex;
+    width: 100%;
+}
+
+.keyboard > span {
+    display: inline-block;
+    padding: 1.4vh 0;
+    border: 2px solid #0071c5;
+    width: 7vw;
+    font-size: 1.2vw;
+    font-weight: 900;
+    margin: 0.3vw;
+    background: #0071c545;
+    box-shadow: 1.5px 1.5px #0071c5;
+}
+
+.keyboard-container {
+    background: #f5f5f5ad;
+    border: 2px solid #0071c5;
+    border-radius: 5px;
+    transition: all 2s;
+
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.thankyou-overlay {
+    position: absolute;
+    top: -39%;
+    width: 81%;
+    right: -21%;
+    bottom: 0;
+    opacity: .3;
+    background-image: url(./assets/images/thankyou-bg.svg);
+    background-size: cover;
+    /* background-position: 169% 40%;
+    background-repeat: no-repeat; */
+}
+
+.relauching-notification {
+    opacity: 0;
+    transition: all 1s;
+}
